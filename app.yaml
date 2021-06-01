@@ -1,0 +1,45 @@
+runtime: php55
+runtime_config:
+  document_root: CloudComputing
+handlers:
+
+  - url: /css
+    static_dir: css
+
+  - url: /font-awesome
+    static_dir: font-awesome
+
+  - url: /fonts
+    static_dir: fonts
+
+  - url: /images
+    static_dir: images
+
+  - url: /js
+    static_dir: js
+
+  - url: /(.+\.(gif|png|jpg))$
+    static_files: \1
+    upload: .+\.(gif|png|jpg)$
+
+
+  - url: /(.+\.php)$
+    script: \1
+
+  - url: /.*
+    script: index.php
+  
+
+#env_variables:
+#  MYSQL_HOST: mysql:unix_socket=/cloudsql/core-guard-274612:asia-south1:ccminiproject
+#  MYSQL_DB: cloud
+#  MYSQL_USER: root
+#  MYSQL_PASS: 12345
+
+
+
+  
+
+
+
+
